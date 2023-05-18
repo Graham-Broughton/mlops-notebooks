@@ -1,0 +1,15 @@
+artifact_uri: file:///home/broug/Desktop/mlops-notebooks/mlruns/159046090093904557/25cb11af63bb4147a6ace607ca082434/artifacts
+end_time: 1684395080127
+entry_point_name: ''
+experiment_id: '159046090093904557'
+lifecycle_stage: active
+run_id: 25cb11af63bb4147a6ace607ca082434
+run_name: upbeat-owl-115
+run_uuid: 25cb11af63bb4147a6ace607ca082434
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1684395066770
+status: 3
+tags: []
+user_id: broug

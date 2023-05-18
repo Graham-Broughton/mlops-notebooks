@@ -1,0 +1,6 @@
+artifact_location: file:///home/broug/Desktop/mlops-notebooks/mlruns/159046090093904557
+creation_time: 1684395066576
+experiment_id: '159046090093904557'
+last_update_time: 1684395066576
+lifecycle_stage: active
+name: nyc-taxi

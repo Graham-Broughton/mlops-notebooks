@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/af8d55047ee1440ba8851bb0acc6af68/artifacts
+end_time: 1684390151359
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: af8d55047ee1440ba8851bb0acc6af68
+run_name: rumbling-colt-518
+run_uuid: af8d55047ee1440ba8851bb0acc6af68
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1684390140675
+status: 3
+tags: []
+user_id: broug
