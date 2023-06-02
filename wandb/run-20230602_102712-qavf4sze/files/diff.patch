@@ -1,0 +1,308 @@
+diff --git a/02-src/sweep.py b/02-src/sweep.py
+index ad9828a..69aef6d 100644
+--- a/02-src/sweep.py
++++ b/02-src/sweep.py
+@@ -27,7 +27,7 @@ def run_train(data_artifact: str):
+ 
+     # Define the XGBoost Regressor Mode, train the model and perform prediction
+     # TODO: Pass the parameters n_estimators, min_samples_split, min_samples_leaf from `config` to `RandomForestRegressor`
+-    rf = RandomForestRegressor(max_depth=config.max_depth, random_state=0)
++    rf = RandomForestRegressor(**config, random_state=0)
+     rf.fit(X_train, y_train)
+     y_pred = rf.predict(X_val)
+ 
+@@ -84,4 +84,4 @@ def run_sweep(wandb_project: str, wandb_entity: str, data_artifact: str, count:
+ 
+ 
+ if __name__ == "__main__":
+-    run_sweep()
+\ No newline at end of file
++    run_sweep()
+diff --git a/02-src/train_wdb.py b/02-src/train_wdb.py
+index ef2b169..68eeece 100644
+--- a/02-src/train_wdb.py
++++ b/02-src/train_wdb.py
+@@ -51,12 +51,16 @@ def run_train(
+ 
+     mse = mean_squared_error(y_val, y_pred, squared=False)
+     # TODO: Log `mse` to Weights & Biases under the key `"MSE"`
++    wandb.log({"MSE": mse})
+ 
+     with open("regressor.pkl", "wb") as f:
+         pickle.dump(rf, f)
+ 
+     # TODO: Log `regressor.pkl` as an artifact of type `model`
++    arty = wandb.Artifact("model", type="model")
++    arty.add_file("regressor.pkl")
++    wandb.log_artifact(arty)
+ 
+ 
+ if __name__ == "__main__":
+-    run_train()
+\ No newline at end of file
++    run_train()
+diff --git a/02.1.Exp-Tracking-WANDB.ipynb b/02.1.Exp-Tracking-WANDB.ipynb
+index 89757f1..ed1fefa 100644
+--- a/02.1.Exp-Tracking-WANDB.ipynb
++++ b/02.1.Exp-Tracking-WANDB.ipynb
+@@ -21,6 +21,26 @@
+     "from sklearn.metrics import accuracy_score, mean_squared_error"
+    ]
+   },
++  {
++   "cell_type": "code",
++   "execution_count": 2,
++   "metadata": {},
++   "outputs": [
++    {
++     "data": {
++      "text/plain": [
++       "'0.15.3'"
++      ]
++     },
++     "execution_count": 2,
++     "metadata": {},
++     "output_type": "execute_result"
++    }
++   ],
++   "source": [
++    "wandb.__version__"
++   ]
++  },
+   {
+    "cell_type": "code",
+    "execution_count": 2,
+diff --git a/02.Exp-Tracking-HW.ipynb b/02.Exp-Tracking-HW.ipynb
+deleted file mode 100644
+index f99b6f0..0000000
+--- a/02.Exp-Tracking-HW.ipynb
++++ /dev/null
+@@ -1,201 +0,0 @@
+-{
+- "cells": [
+-  {
+-   "cell_type": "code",
+-   "execution_count": 1,
+-   "metadata": {},
+-   "outputs": [
+-    {
+-     "name": "stdout",
+-     "output_type": "stream",
+-     "text": [
+-      "mlflow, version 2.3.2\n"
+-     ]
+-    }
+-   ],
+-   "source": [
+-    "!mlflow --version"
+-   ]
+-  },
+-  {
+-   "cell_type": "code",
+-   "execution_count": 3,
+-   "metadata": {},
+-   "outputs": [],
+-   "source": [
+-    "!python 02-src/preprocess_data.py --raw_data_path data/taxi --dest_path ./output"
+-   ]
+-  },
+-  {
+-   "cell_type": "code",
+-   "execution_count": 1,
+-   "metadata": {},
+-   "outputs": [],
+-   "source": [
+-    "import mlflow\n",
+-    "#mlflow.set_tracking_uri(\"http://127.0.0.1:5000\")\n",
+-    "# mlflow.set_experiment(\"nyc-taxi\")"
+-   ]
+-  },
+-  {
+-   "cell_type": "code",
+-   "execution_count": 8,
+-   "metadata": {},
+-   "outputs": [
+-    {
+-     "name": "stdout",
+-     "output_type": "stream",
+-     "text": [
+-      "2023/05/18 07:36:27 INFO mlflow.tracking.fluent: Autologging successfully enabled for sklearn.\n",
+-      "2023/05/18 07:36:40 WARNING mlflow.utils.autologging_utils: MLflow autologging encountered a warning: \"/home/broug/mambaforge/envs/kaggle/lib/python3.11/site-packages/_distutils_hack/__init__.py:33: UserWarning: Setuptools is replacing distutils.\"\n"
+-     ]
+-    }
+-   ],
+-   "source": [
+-    "!python 02-src/train.py_object()"
+-   ]
+-  },
+-  {
+-   "cell_type": "code",
+-   "execution_count": 9,
+-   "metadata": {},
+-   "outputs": [
+-    {
+-     "name": "stdout",
+-     "output_type": "stream",
+-     "text": [
+-      "[2023-05-18 07:36:54 +0000] [48205] [INFO] Starting gunicorn 20.1.0\n",
+-      "[2023-05-18 07:36:54 +0000] [48205] [INFO] Listening at: http://127.0.0.1:5000 (48205)\n",
+-      "[2023-05-18 07:36:54 +0000] [48205] [INFO] Using worker: sync\n",
+-      "[2023-05-18 07:36:54 +0000] [48206] [INFO] Booting worker with pid: 48206\n",
+-      "[2023-05-18 07:36:54 +0000] [48207] [INFO] Booting worker with pid: 48207\n",
+-      "[2023-05-18 07:36:54 +0000] [48208] [INFO] Booting worker with pid: 48208\n",
+-      "[2023-05-18 07:36:55 +0000] [48209] [INFO] Booting worker with pid: 48209\n",
+-      "^C\n",
+-      "[2023-05-18 07:40:48 +0000] [48205] [INFO] Handling signal: int\n",
+-      "[2023-05-18 07:40:48 +0000] [48207] [INFO] Worker exiting (pid: 48207)\n",
+-      "[2023-05-18 07:40:48 +0000] [48209] [INFO] Worker exiting (pid: 48209)\n",
+-      "[2023-05-18 07:40:48 +0000] [48208] [INFO] Worker exiting (pid: 48208)\n",
+-      "[2023-05-18 07:40:48 +0000] [48206] [INFO] Worker exiting (pid: 48206)\n"
+-     ]
+-    }
+-   ],
+-   "source": [
+-    "!mlflow ui\n",
+-    "# max depth = 10"
+-   ]
+-  },
+-  {
+-   "cell_type": "code",
+-   "execution_count": 11,
+-   "metadata": {},
+-   "outputs": [
+-    {
+-     "name": "stdout",
+-     "output_type": "stream",
+-     "text": [
+-      "[2023-05-18 07:47:21 +0000] [51431] [INFO] Starting gunicorn 20.1.0\n",
+-      "[2023-05-18 07:47:21 +0000] [51431] [INFO] Listening at: http://127.0.0.1:5000 (51431)\n",
+-      "[2023-05-18 07:47:21 +0000] [51431] [INFO] Using worker: sync\n",
+-      "[2023-05-18 07:47:21 +0000] [51432] [INFO] Booting worker with pid: 51432\n",
+-      "[2023-05-18 07:47:21 +0000] [51433] [INFO] Booting worker with pid: 51433\n",
+-      "[2023-05-18 07:47:21 +0000] [51434] [INFO] Booting worker with pid: 51434\n",
+-      "[2023-05-18 07:47:21 +0000] [51435] [INFO] Booting worker with pid: 51435\n",
+-      "^C\n",
+-      "[2023-05-18 07:47:43 +0000] [51431] [INFO] Handling signal: int\n",
+-      "[2023-05-18 07:47:43 +0000] [51433] [INFO] Worker exiting (pid: 51433)\n",
+-      "[2023-05-18 07:47:43 +0000] [51432] [INFO] Worker exiting (pid: 51432)\n",
+-      "[2023-05-18 07:47:43 +0000] [51434] [INFO] Worker exiting (pid: 51434)\n",
+-      "[2023-05-18 07:47:43 +0000] [51435] [INFO] Worker exiting (pid: 51435)\n"
+-     ]
+-    }
+-   ],
+-   "source": [
+-    "!mlflow server --backend-store-uri sqlite:///mlflow.db --default-artifact-root ./artifacts"
+-   ]
+-  },
+-  {
+-   "cell_type": "code",
+-   "execution_count": 12,
+-   "metadata": {},
+-   "outputs": [
+-    {
+-     "name": "stdout",
+-     "output_type": "stream",
+-     "text": [
+-      "2023/05/18 07:54:54 INFO mlflow.tracking.fluent: Experiment with name 'random-forest-hyperopt' does not exist. Creating a new experiment.\n",
+-      "\u001b[32m[I 2023-05-18 07:54:54,280]\u001b[0m A new study created in memory with name: no-name-2a8c84cd-c87f-404c-b9ec-e51fea2b4aa8\u001b[0m\n",
+-      "\u001b[32m[I 2023-05-18 07:54:56,452]\u001b[0m Trial 0 finished with value: 2.451379690825458 and parameters: {'n_estimators': 25, 'max_depth': 20, 'min_samples_split': 8, 'min_samples_leaf': 3}. Best is trial 0 with value: 2.451379690825458.\u001b[0m\n",
+-      "\u001b[32m[I 2023-05-18 07:54:56,929]\u001b[0m Trial 1 finished with value: 2.4667366020368333 and parameters: {'n_estimators': 16, 'max_depth': 4, 'min_samples_split': 2, 'min_samples_leaf': 4}. Best is trial 0 with value: 2.451379690825458.\u001b[0m\n",
+-      "\u001b[32m[I 2023-05-18 07:54:58,651]\u001b[0m Trial 2 finished with value: 2.449827329704216 and parameters: {'n_estimators': 34, 'max_depth': 15, 'min_samples_split': 2, 'min_samples_leaf': 4}. Best is trial 2 with value: 2.449827329704216.\u001b[0m\n",
+-      "\u001b[32m[I 2023-05-18 07:54:59,217]\u001b[0m Trial 3 finished with value: 2.460983516558473 and parameters: {'n_estimators': 44, 'max_depth': 5, 'min_samples_split': 3, 'min_samples_leaf': 1}. Best is trial 2 with value: 2.449827329704216.\u001b[0m\n",
+-      "\u001b[32m[I 2023-05-18 07:54:59,912]\u001b[0m Trial 4 finished with value: 2.453877262701052 and parameters: {'n_estimators': 22, 'max_depth': 11, 'min_samples_split': 5, 'min_samples_leaf': 2}. Best is trial 2 with value: 2.449827329704216.\u001b[0m\n",
+-      "\u001b[32m[I 2023-05-18 07:55:00,260]\u001b[0m Trial 5 finished with value: 2.4720122094960733 and parameters: {'n_estimators': 35, 'max_depth': 3, 'min_samples_split': 4, 'min_samples_leaf': 2}. Best is trial 2 with value: 2.449827329704216.\u001b[0m\n",
+-      "\u001b[32m[I 2023-05-18 07:55:01,915]\u001b[0m Trial 6 finished with value: 2.4516421799356767 and parameters: {'n_estimators': 28, 'max_depth': 16, 'min_samples_split': 3, 'min_samples_leaf': 3}. Best is trial 2 with value: 2.449827329704216.\u001b[0m\n",
+-      "\u001b[32m[I 2023-05-18 07:55:02,154]\u001b[0m Trial 7 finished with value: 2.5374040268274087 and parameters: {'n_estimators': 34, 'max_depth': 1, 'min_samples_split': 7, 'min_samples_leaf': 1}. Best is trial 2 with value: 2.449827329704216.\u001b[0m\n",
+-      "\u001b[32m[I 2023-05-18 07:55:03,097]\u001b[0m Trial 8 finished with value: 2.455971238567075 and parameters: {'n_estimators': 12, 'max_depth': 19, 'min_samples_split': 10, 'min_samples_leaf': 4}. Best is trial 2 with value: 2.449827329704216.\u001b[0m\n",
+-      "\u001b[32m[I 2023-05-18 07:55:03,315]\u001b[0m Trial 9 finished with value: 2.486106021576535 and parameters: {'n_estimators': 22, 'max_depth': 2, 'min_samples_split': 8, 'min_samples_leaf': 2}. Best is trial 2 with value: 2.449827329704216.\u001b[0m\n"
+-     ]
+-    }
+-   ],
+-   "source": [
+-    "!python 02-src/hpo.py"
+-   ]
+-  },
+-  {
+-   "cell_type": "code",
+-   "execution_count": 13,
+-   "metadata": {},
+-   "outputs": [
+-    {
+-     "name": "stdout",
+-     "output_type": "stream",
+-     "text": [
+-      "2023/05/18 08:13:53 INFO mlflow.tracking.fluent: Experiment with name 'random-forest-best-models' does not exist. Creating a new experiment.\n",
+-      "2023/05/18 08:13:58 WARNING mlflow.utils.autologging_utils: MLflow autologging encountered a warning: \"/home/broug/mambaforge/envs/kaggle/lib/python3.11/site-packages/_distutils_hack/__init__.py:33: UserWarning: Setuptools is replacing distutils.\"\n",
+-      "Successfully registered model 'random-forest'.\n",
+-      "2023/05/18 08:14:13 INFO mlflow.tracking._model_registry.client: Waiting up to 300 seconds for model version to finish creation. Model name: random-forest, version 1\n",
+-      "Created version '1' of model 'random-forest'.\n"
+-     ]
+-    }
+-   ],
+-   "source": [
+-    "!python 02-src/register_model.py\n",
+-    "# test rmse = 2.291"
+-   ]
+-  },
+-  {
+-   "cell_type": "code",
+-   "execution_count": null,
+-   "metadata": {},
+-   "outputs": [],
+-   "source": [
+-    "# version num = 1\n",
+-    "# source exp = powerful-hen-587\n",
+-    "# not sure what model signature is. the tensor shape maybe?"
+-   ]
+-  }
+- ],
+- "metadata": {
+-  "kernelspec": {
+-   "display_name": "kaggle",
+-   "language": "python",
+-   "name": "python3"
+-  },
+-  "language_info": {
+-   "codemirror_mode": {
+-    "name": "ipython",
+-    "version": 3
+-   },
+-   "file_extension": ".py",
+-   "mimetype": "text/x-python",
+-   "name": "python",
+-   "nbconvert_exporter": "python",
+-   "pygments_lexer": "ipython3",
+-   "version": "3.11.3"
+-  },
+-  "orig_nbformat": 4
+- },
+- "nbformat": 4,
+- "nbformat_minor": 2
+-}
+diff --git a/wandb/debug-internal.log b/wandb/debug-internal.log
+index 43ed843..e9589e3 120000
+--- a/wandb/debug-internal.log
++++ b/wandb/debug-internal.log
+@@ -1 +1 @@
+-run-20230602_062540-g22rssx3/logs/debug-internal.log
+\ No newline at end of file
++run-20230602_102712-qavf4sze/logs/debug-internal.log
+\ No newline at end of file
+diff --git a/wandb/debug.log b/wandb/debug.log
+index d05f77b..6104bee 120000
+--- a/wandb/debug.log
++++ b/wandb/debug.log
+@@ -1 +1 @@
+-run-20230602_062540-g22rssx3/logs/debug.log
+\ No newline at end of file
++run-20230602_102712-qavf4sze/logs/debug.log
+\ No newline at end of file
+diff --git a/wandb/latest-run b/wandb/latest-run
+index 2f8195b..9ebcd12 120000
+--- a/wandb/latest-run
++++ b/wandb/latest-run
+@@ -1 +1 @@
+-run-20230602_062540-g22rssx3
+\ No newline at end of file
++run-20230602_102712-qavf4sze
+\ No newline at end of file

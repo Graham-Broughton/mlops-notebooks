@@ -1,0 +1,207 @@
+2023-06-02 10:20:06,721 INFO    StreamThr :40284 [internal.py:wandb_internal():86] W&B internal server running at pid: 40284, started at: 2023-06-02 10:20:06.720505
+2023-06-02 10:20:06,727 DEBUG   HandlerThread:40284 [handler.py:handle_request():144] handle_request: status
+2023-06-02 10:20:06,732 INFO    WriterThread:40284 [datastore.py:open_for_write():85] open: /home/broug/Desktop/mlops-notebooks/wandb/run-20230602_102006-hyk6d2nt/run-hyk6d2nt.wandb
+2023-06-02 10:20:06,733 DEBUG   SenderThread:40284 [sender.py:send():375] send: header
+2023-06-02 10:20:06,739 DEBUG   SenderThread:40284 [sender.py:send():375] send: run
+2023-06-02 10:20:06,970 INFO    SenderThread:40284 [dir_watcher.py:__init__():219] watching files in: /home/broug/Desktop/mlops-notebooks/wandb/run-20230602_102006-hyk6d2nt/files
+2023-06-02 10:20:06,970 INFO    SenderThread:40284 [sender.py:_start_run_threads():1124] run started: hyk6d2nt with start time 1685701206.726141
+2023-06-02 10:20:06,970 DEBUG   SenderThread:40284 [sender.py:send_request():402] send_request: summary_record
+2023-06-02 10:20:06,970 INFO    SenderThread:40284 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-02 10:20:06,971 DEBUG   HandlerThread:40284 [handler.py:handle_request():144] handle_request: check_version
+2023-06-02 10:20:06,971 DEBUG   SenderThread:40284 [sender.py:send_request():402] send_request: check_version
+2023-06-02 10:20:07,049 DEBUG   HandlerThread:40284 [handler.py:handle_request():144] handle_request: run_start
+2023-06-02 10:20:07,050 DEBUG   HandlerThread:40284 [system_info.py:__init__():31] System info init
+2023-06-02 10:20:07,050 DEBUG   HandlerThread:40284 [system_info.py:__init__():46] System info init done
+2023-06-02 10:20:07,050 INFO    HandlerThread:40284 [system_monitor.py:start():181] Starting system monitor
+2023-06-02 10:20:07,050 INFO    SystemMonitor:40284 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-06-02 10:20:07,051 INFO    HandlerThread:40284 [system_monitor.py:probe():201] Collecting system info
+2023-06-02 10:20:07,053 DEBUG   HandlerThread:40284 [system_info.py:probe():195] Probing system
+2023-06-02 10:20:07,053 INFO    SystemMonitor:40284 [interfaces.py:start():190] Started cpu monitoring
+2023-06-02 10:20:07,054 INFO    SystemMonitor:40284 [interfaces.py:start():190] Started disk monitoring
+2023-06-02 10:20:07,056 INFO    SystemMonitor:40284 [interfaces.py:start():190] Started memory monitoring
+2023-06-02 10:20:07,058 DEBUG   HandlerThread:40284 [system_info.py:_probe_git():180] Probing git
+2023-06-02 10:20:07,059 INFO    SystemMonitor:40284 [interfaces.py:start():190] Started network monitoring
+2023-06-02 10:20:07,067 DEBUG   HandlerThread:40284 [system_info.py:_probe_git():188] Probing git done
+2023-06-02 10:20:07,067 DEBUG   HandlerThread:40284 [system_info.py:probe():240] Probing system done
+2023-06-02 10:20:07,067 DEBUG   HandlerThread:40284 [system_monitor.py:probe():210] {'os': 'Linux-5.19.0-1024-gcp-x86_64-with-glibc2.35', 'python': '3.11.3', 'heartbeatAt': '2023-06-02T10:20:07.053329', 'startedAt': '2023-06-02T10:20:06.710976', 'docker': None, 'cuda': None, 'args': ('--wandb_project', 'mlops_zoom_02', '--wandb_entity', 'g-broughton', '--data_artifact', 'g-broughton/mlops_zoom_02/NYC-Taxi:v0'), 'state': 'running', 'program': '/home/broug/Desktop/mlops-notebooks/02-src/train_wdb.py', 'codePath': '02-src/train_wdb.py', 'git': {'remote': 'https://github.com/Graham-Broughton/mlops-notebooks.git', 'commit': 'c618a669d0c50459b1968d98b05176a3e72a0f17'}, 'email': 'broughton.graham@gmail.com', 'root': '/home/broug/Desktop/mlops-notebooks', 'host': 'instance-5', 'username': 'broug', 'executable': '/home/broug/mambaforge/envs/kaggle/bin/python', 'cpu_count': 4, 'cpu_count_logical': 8, 'cpu_freq': {'current': 2199.998, 'min': 0.0, 'max': 0.0}, 'cpu_freq_per_core': [{'current': 2199.998, 'min': 0.0, 'max': 0.0}, {'current': 2199.998, 'min': 0.0, 'max': 0.0}, {'current': 2199.998, 'min': 0.0, 'max': 0.0}, {'current': 2199.998, 'min': 0.0, 'max': 0.0}, {'current': 2199.998, 'min': 0.0, 'max': 0.0}, {'current': 2199.998, 'min': 0.0, 'max': 0.0}, {'current': 2199.998, 'min': 0.0, 'max': 0.0}, {'current': 2199.998, 'min': 0.0, 'max': 0.0}], 'disk': {'total': 48.27519989013672, 'used': 14.94302749633789}, 'memory': {'total': 31.34848403930664}}
+2023-06-02 10:20:07,067 INFO    HandlerThread:40284 [system_monitor.py:probe():211] Finished collecting system info
+2023-06-02 10:20:07,067 INFO    HandlerThread:40284 [system_monitor.py:probe():214] Publishing system info
+2023-06-02 10:20:07,067 DEBUG   HandlerThread:40284 [system_info.py:_save_pip():51] Saving list of pip packages installed into the current environment
+2023-06-02 10:20:07,067 DEBUG   HandlerThread:40284 [system_info.py:_save_pip():67] Saving pip packages done
+2023-06-02 10:20:07,067 DEBUG   HandlerThread:40284 [system_info.py:_save_conda():74] Saving list of conda packages installed into the current environment
+2023-06-02 10:20:07,971 INFO    Thread-12 :40284 [dir_watcher.py:_on_file_created():278] file/dir created: /home/broug/Desktop/mlops-notebooks/wandb/run-20230602_102006-hyk6d2nt/files/wandb-summary.json
+2023-06-02 10:20:07,971 INFO    Thread-12 :40284 [dir_watcher.py:_on_file_created():278] file/dir created: /home/broug/Desktop/mlops-notebooks/wandb/run-20230602_102006-hyk6d2nt/files/requirements.txt
+2023-06-02 10:20:07,972 INFO    Thread-12 :40284 [dir_watcher.py:_on_file_created():278] file/dir created: /home/broug/Desktop/mlops-notebooks/wandb/run-20230602_102006-hyk6d2nt/files/conda-environment.yaml
+2023-06-02 10:20:09,825 DEBUG   HandlerThread:40284 [system_info.py:_save_conda():86] Saving conda packages done
+2023-06-02 10:20:09,825 DEBUG   HandlerThread:40284 [system_info.py:_save_code():89] Saving code
+2023-06-02 10:20:09,828 DEBUG   HandlerThread:40284 [system_info.py:_save_code():110] Saving code done
+2023-06-02 10:20:09,828 DEBUG   HandlerThread:40284 [system_info.py:_save_patches():127] Saving git patches
+2023-06-02 10:20:09,853 DEBUG   HandlerThread:40284 [system_info.py:_save_patches():169] Saving git patches done
+2023-06-02 10:20:09,853 INFO    HandlerThread:40284 [system_monitor.py:probe():216] Finished publishing system info
+2023-06-02 10:20:09,855 DEBUG   SenderThread:40284 [sender.py:send():375] send: files
+2023-06-02 10:20:09,855 INFO    SenderThread:40284 [sender.py:_save_file():1378] saving file wandb-metadata.json with policy now
+2023-06-02 10:20:09,856 INFO    SenderThread:40284 [sender.py:_save_file():1378] saving file code/02-src/train_wdb.py with policy now
+2023-06-02 10:20:09,856 INFO    SenderThread:40284 [sender.py:_save_file():1378] saving file diff.patch with policy now
+2023-06-02 10:20:09,866 DEBUG   SenderThread:40284 [sender.py:send():375] send: telemetry
+2023-06-02 10:20:09,866 DEBUG   HandlerThread:40284 [handler.py:handle_request():144] handle_request: stop_status
+2023-06-02 10:20:09,867 DEBUG   SenderThread:40284 [sender.py:send_request():402] send_request: stop_status
+2023-06-02 10:20:09,971 INFO    Thread-12 :40284 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/broug/Desktop/mlops-notebooks/wandb/run-20230602_102006-hyk6d2nt/files/conda-environment.yaml
+2023-06-02 10:20:09,971 INFO    Thread-12 :40284 [dir_watcher.py:_on_file_created():278] file/dir created: /home/broug/Desktop/mlops-notebooks/wandb/run-20230602_102006-hyk6d2nt/files/wandb-metadata.json
+2023-06-02 10:20:09,971 INFO    Thread-12 :40284 [dir_watcher.py:_on_file_created():278] file/dir created: /home/broug/Desktop/mlops-notebooks/wandb/run-20230602_102006-hyk6d2nt/files/code/02-src/train_wdb.py
+2023-06-02 10:20:09,971 INFO    Thread-12 :40284 [dir_watcher.py:_on_file_created():278] file/dir created: /home/broug/Desktop/mlops-notebooks/wandb/run-20230602_102006-hyk6d2nt/files/diff.patch
+2023-06-02 10:20:09,972 INFO    Thread-12 :40284 [dir_watcher.py:_on_file_created():278] file/dir created: /home/broug/Desktop/mlops-notebooks/wandb/run-20230602_102006-hyk6d2nt/files/code/02-src
+2023-06-02 10:20:09,972 INFO    Thread-12 :40284 [dir_watcher.py:_on_file_created():278] file/dir created: /home/broug/Desktop/mlops-notebooks/wandb/run-20230602_102006-hyk6d2nt/files/code
+2023-06-02 10:20:10,198 INFO    wandb-upload_0:40284 [upload_job.py:push():137] Uploaded file /tmp/tmpkpgvjr9gwandb/72ikoxjc-wandb-metadata.json
+2023-06-02 10:20:10,239 DEBUG   SenderThread:40284 [sender.py:send():375] send: use_artifact
+2023-06-02 10:20:10,243 INFO    wandb-upload_2:40284 [upload_job.py:push():137] Uploaded file /tmp/tmpkpgvjr9gwandb/20hsbg04-diff.patch
+2023-06-02 10:20:10,305 INFO    wandb-upload_1:40284 [upload_job.py:push():137] Uploaded file /tmp/tmpkpgvjr9gwandb/mafg5z51-code/02-src/train_wdb.py
+2023-06-02 10:20:10,972 INFO    Thread-12 :40284 [dir_watcher.py:_on_file_created():278] file/dir created: /home/broug/Desktop/mlops-notebooks/wandb/run-20230602_102006-hyk6d2nt/files/output.log
+2023-06-02 10:20:12,458 DEBUG   HandlerThread:40284 [handler.py:handle_request():144] handle_request: status_report
+2023-06-02 10:20:12,973 INFO    Thread-12 :40284 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/broug/Desktop/mlops-notebooks/wandb/run-20230602_102006-hyk6d2nt/files/output.log
+2023-06-02 10:20:17,457 DEBUG   HandlerThread:40284 [handler.py:handle_request():144] handle_request: status_report
+2023-06-02 10:20:20,823 DEBUG   HandlerThread:40284 [handler.py:handle_request():144] handle_request: partial_history
+2023-06-02 10:20:20,824 DEBUG   SenderThread:40284 [sender.py:send():375] send: history
+2023-06-02 10:20:20,824 DEBUG   SenderThread:40284 [sender.py:send_request():402] send_request: summary_record
+2023-06-02 10:20:20,826 INFO    SenderThread:40284 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-02 10:20:20,929 DEBUG   HandlerThread:40284 [handler.py:handle_request():144] handle_request: log_artifact
+2023-06-02 10:20:20,929 DEBUG   SenderThread:40284 [sender.py:send_request():402] send_request: log_artifact
+2023-06-02 10:20:20,977 INFO    Thread-12 :40284 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/broug/Desktop/mlops-notebooks/wandb/run-20230602_102006-hyk6d2nt/files/wandb-summary.json
+2023-06-02 10:20:21,736 INFO    wandb-upload_0:40284 [upload_job.py:push():95] Uploaded file /home/broug/.local/share/wandb/artifacts/staging/tmp07kckzdl
+2023-06-02 10:20:21,932 DEBUG   HandlerThread:40284 [handler.py:handle_request():144] handle_request: poll_exit
+2023-06-02 10:20:22,292 INFO    SenderThread:40284 [sender.py:send_request_log_artifact():1438] logged artifact model - {'id': 'QXJ0aWZhY3Q6NDc1MDEwMDY5', 'digest': 'f716fa05d612f94037d805884c5e41c4', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjczNjg0NTM2', 'latestArtifact': None}, 'version': 'latest'}
+2023-06-02 10:20:22,292 DEBUG   SenderThread:40284 [sender.py:send():375] send: exit
+2023-06-02 10:20:22,292 INFO    SenderThread:40284 [sender.py:send_exit():598] handling exit code: 0
+2023-06-02 10:20:22,293 INFO    SenderThread:40284 [sender.py:send_exit():600] handling runtime: 13
+2023-06-02 10:20:22,293 INFO    SenderThread:40284 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-02 10:20:22,293 INFO    SenderThread:40284 [sender.py:send_exit():606] send defer
+2023-06-02 10:20:22,293 DEBUG   SenderThread:40284 [sender.py:send_request():402] send_request: poll_exit
+2023-06-02 10:20:22,294 DEBUG   HandlerThread:40284 [handler.py:handle_request():144] handle_request: defer
+2023-06-02 10:20:22,294 INFO    HandlerThread:40284 [handler.py:handle_request_defer():170] handle defer: 0
+2023-06-02 10:20:22,295 DEBUG   SenderThread:40284 [sender.py:send_request():402] send_request: defer
+2023-06-02 10:20:22,295 INFO    SenderThread:40284 [sender.py:send_request_defer():622] handle sender defer: 0
+2023-06-02 10:20:22,295 INFO    SenderThread:40284 [sender.py:transition_state():626] send defer: 1
+2023-06-02 10:20:22,295 DEBUG   HandlerThread:40284 [handler.py:handle_request():144] handle_request: defer
+2023-06-02 10:20:22,295 INFO    HandlerThread:40284 [handler.py:handle_request_defer():170] handle defer: 1
+2023-06-02 10:20:22,295 DEBUG   SenderThread:40284 [sender.py:send_request():402] send_request: defer
+2023-06-02 10:20:22,295 INFO    SenderThread:40284 [sender.py:send_request_defer():622] handle sender defer: 1
+2023-06-02 10:20:22,296 INFO    SenderThread:40284 [sender.py:transition_state():626] send defer: 2
+2023-06-02 10:20:22,296 DEBUG   HandlerThread:40284 [handler.py:handle_request():144] handle_request: defer
+2023-06-02 10:20:22,296 INFO    HandlerThread:40284 [handler.py:handle_request_defer():170] handle defer: 2
+2023-06-02 10:20:22,296 INFO    HandlerThread:40284 [system_monitor.py:finish():190] Stopping system monitor
+2023-06-02 10:20:22,296 DEBUG   SystemMonitor:40284 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-06-02 10:20:22,296 DEBUG   SystemMonitor:40284 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-06-02 10:20:22,296 DEBUG   SystemMonitor:40284 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-06-02 10:20:22,297 INFO    HandlerThread:40284 [interfaces.py:finish():202] Joined cpu monitor
+2023-06-02 10:20:22,297 INFO    HandlerThread:40284 [interfaces.py:finish():202] Joined disk monitor
+2023-06-02 10:20:22,297 INFO    HandlerThread:40284 [interfaces.py:finish():202] Joined memory monitor
+2023-06-02 10:20:22,297 INFO    HandlerThread:40284 [interfaces.py:finish():202] Joined network monitor
+2023-06-02 10:20:22,298 DEBUG   SenderThread:40284 [sender.py:send_request():402] send_request: defer
+2023-06-02 10:20:22,298 INFO    SenderThread:40284 [sender.py:send_request_defer():622] handle sender defer: 2
+2023-06-02 10:20:22,298 INFO    SenderThread:40284 [sender.py:transition_state():626] send defer: 3
+2023-06-02 10:20:22,298 DEBUG   SenderThread:40284 [sender.py:send():375] send: stats
+2023-06-02 10:20:22,298 DEBUG   HandlerThread:40284 [handler.py:handle_request():144] handle_request: defer
+2023-06-02 10:20:22,298 INFO    HandlerThread:40284 [handler.py:handle_request_defer():170] handle defer: 3
+2023-06-02 10:20:22,299 DEBUG   SenderThread:40284 [sender.py:send_request():402] send_request: defer
+2023-06-02 10:20:22,299 INFO    SenderThread:40284 [sender.py:send_request_defer():622] handle sender defer: 3
+2023-06-02 10:20:22,299 INFO    SenderThread:40284 [sender.py:transition_state():626] send defer: 4
+2023-06-02 10:20:22,299 DEBUG   HandlerThread:40284 [handler.py:handle_request():144] handle_request: defer
+2023-06-02 10:20:22,299 INFO    HandlerThread:40284 [handler.py:handle_request_defer():170] handle defer: 4
+2023-06-02 10:20:22,299 DEBUG   SenderThread:40284 [sender.py:send_request():402] send_request: defer
+2023-06-02 10:20:22,299 INFO    SenderThread:40284 [sender.py:send_request_defer():622] handle sender defer: 4
+2023-06-02 10:20:22,299 INFO    SenderThread:40284 [sender.py:transition_state():626] send defer: 5
+2023-06-02 10:20:22,299 DEBUG   HandlerThread:40284 [handler.py:handle_request():144] handle_request: defer
+2023-06-02 10:20:22,299 INFO    HandlerThread:40284 [handler.py:handle_request_defer():170] handle defer: 5
+2023-06-02 10:20:22,299 DEBUG   SenderThread:40284 [sender.py:send():375] send: summary
+2023-06-02 10:20:22,300 INFO    SenderThread:40284 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-06-02 10:20:22,300 DEBUG   SenderThread:40284 [sender.py:send_request():402] send_request: defer
+2023-06-02 10:20:22,300 INFO    SenderThread:40284 [sender.py:send_request_defer():622] handle sender defer: 5
+2023-06-02 10:20:22,300 INFO    SenderThread:40284 [sender.py:transition_state():626] send defer: 6
+2023-06-02 10:20:22,300 DEBUG   HandlerThread:40284 [handler.py:handle_request():144] handle_request: defer
+2023-06-02 10:20:22,300 INFO    HandlerThread:40284 [handler.py:handle_request_defer():170] handle defer: 6
+2023-06-02 10:20:22,300 DEBUG   SenderThread:40284 [sender.py:send_request():402] send_request: defer
+2023-06-02 10:20:22,301 INFO    SenderThread:40284 [sender.py:send_request_defer():622] handle sender defer: 6
+2023-06-02 10:20:22,304 DEBUG   HandlerThread:40284 [handler.py:handle_request():144] handle_request: status_report
+2023-06-02 10:20:22,434 INFO    SenderThread:40284 [sender.py:transition_state():626] send defer: 7
+2023-06-02 10:20:22,435 DEBUG   HandlerThread:40284 [handler.py:handle_request():144] handle_request: defer
+2023-06-02 10:20:22,435 INFO    HandlerThread:40284 [handler.py:handle_request_defer():170] handle defer: 7
+2023-06-02 10:20:22,435 DEBUG   SenderThread:40284 [sender.py:send_request():402] send_request: defer
+2023-06-02 10:20:22,435 INFO    SenderThread:40284 [sender.py:send_request_defer():622] handle sender defer: 7
+2023-06-02 10:20:22,460 INFO    SenderThread:40284 [sender.py:transition_state():626] send defer: 8
+2023-06-02 10:20:22,461 DEBUG   HandlerThread:40284 [handler.py:handle_request():144] handle_request: defer
+2023-06-02 10:20:22,461 INFO    HandlerThread:40284 [handler.py:handle_request_defer():170] handle defer: 8
+2023-06-02 10:20:22,461 DEBUG   SenderThread:40284 [sender.py:send_request():402] send_request: defer
+2023-06-02 10:20:22,461 INFO    SenderThread:40284 [sender.py:send_request_defer():622] handle sender defer: 8
+2023-06-02 10:20:22,469 INFO    SenderThread:40284 [sender.py:transition_state():626] send defer: 9
+2023-06-02 10:20:22,469 DEBUG   HandlerThread:40284 [handler.py:handle_request():144] handle_request: defer
+2023-06-02 10:20:22,469 INFO    HandlerThread:40284 [handler.py:handle_request_defer():170] handle defer: 9
+2023-06-02 10:20:22,470 DEBUG   SenderThread:40284 [sender.py:send():375] send: artifact
+2023-06-02 10:20:22,934 DEBUG   HandlerThread:40284 [handler.py:handle_request():144] handle_request: poll_exit
+2023-06-02 10:20:22,978 INFO    Thread-12 :40284 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/broug/Desktop/mlops-notebooks/wandb/run-20230602_102006-hyk6d2nt/files/wandb-summary.json
+2023-06-02 10:20:22,978 INFO    Thread-12 :40284 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/broug/Desktop/mlops-notebooks/wandb/run-20230602_102006-hyk6d2nt/files/config.yaml
+2023-06-02 10:20:22,978 INFO    Thread-12 :40284 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/broug/Desktop/mlops-notebooks/wandb/run-20230602_102006-hyk6d2nt/files/output.log
+2023-06-02 10:20:23,194 INFO    wandb-upload_0:40284 [upload_job.py:push():95] Uploaded file /home/broug/.local/share/wandb/artifacts/staging/tmpn8iqpc8c
+2023-06-02 10:20:23,196 INFO    wandb-upload_1:40284 [upload_job.py:push():95] Uploaded file /home/broug/.local/share/wandb/artifacts/staging/tmpboryz_sf
+2023-06-02 10:20:23,275 INFO    wandb-upload_2:40284 [upload_job.py:push():95] Uploaded file /home/broug/.local/share/wandb/artifacts/staging/tmpk0dx7mjz
+2023-06-02 10:20:24,092 INFO    SenderThread:40284 [sender.py:send_artifact():1474] sent artifact job-https___github.com_Graham-Broughton_mlops-notebooks.git_02-src_train_wdb.py - {'id': 'QXJ0aWZhY3Q6NDc1MDEwMDg2', 'digest': '5c023b6e321fa0c58e16bf5f1f9e77e7', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjczNjg0NTQ0', 'latestArtifact': None}, 'version': 'latest'}
+2023-06-02 10:20:24,092 DEBUG   SenderThread:40284 [sender.py:send_request():402] send_request: defer
+2023-06-02 10:20:24,092 INFO    SenderThread:40284 [sender.py:send_request_defer():622] handle sender defer: 9
+2023-06-02 10:20:24,092 INFO    SenderThread:40284 [dir_watcher.py:finish():365] shutting down directory watcher
+2023-06-02 10:20:24,979 INFO    SenderThread:40284 [dir_watcher.py:finish():395] scan: /home/broug/Desktop/mlops-notebooks/wandb/run-20230602_102006-hyk6d2nt/files
+2023-06-02 10:20:24,980 INFO    SenderThread:40284 [dir_watcher.py:finish():409] scan save: /home/broug/Desktop/mlops-notebooks/wandb/run-20230602_102006-hyk6d2nt/files/requirements.txt requirements.txt
+2023-06-02 10:20:24,980 INFO    SenderThread:40284 [dir_watcher.py:finish():409] scan save: /home/broug/Desktop/mlops-notebooks/wandb/run-20230602_102006-hyk6d2nt/files/output.log output.log
+2023-06-02 10:20:24,980 INFO    SenderThread:40284 [dir_watcher.py:finish():409] scan save: /home/broug/Desktop/mlops-notebooks/wandb/run-20230602_102006-hyk6d2nt/files/wandb-summary.json wandb-summary.json
+2023-06-02 10:20:24,980 INFO    SenderThread:40284 [dir_watcher.py:finish():409] scan save: /home/broug/Desktop/mlops-notebooks/wandb/run-20230602_102006-hyk6d2nt/files/diff.patch diff.patch
+2023-06-02 10:20:24,980 INFO    SenderThread:40284 [dir_watcher.py:finish():409] scan save: /home/broug/Desktop/mlops-notebooks/wandb/run-20230602_102006-hyk6d2nt/files/config.yaml config.yaml
+2023-06-02 10:20:24,980 INFO    SenderThread:40284 [dir_watcher.py:finish():409] scan save: /home/broug/Desktop/mlops-notebooks/wandb/run-20230602_102006-hyk6d2nt/files/wandb-metadata.json wandb-metadata.json
+2023-06-02 10:20:24,980 INFO    SenderThread:40284 [dir_watcher.py:finish():409] scan save: /home/broug/Desktop/mlops-notebooks/wandb/run-20230602_102006-hyk6d2nt/files/conda-environment.yaml conda-environment.yaml
+2023-06-02 10:20:24,980 INFO    SenderThread:40284 [dir_watcher.py:finish():409] scan save: /home/broug/Desktop/mlops-notebooks/wandb/run-20230602_102006-hyk6d2nt/files/code/02-src/train_wdb.py code/02-src/train_wdb.py
+2023-06-02 10:20:24,980 INFO    SenderThread:40284 [sender.py:transition_state():626] send defer: 10
+2023-06-02 10:20:24,980 DEBUG   SenderThread:40284 [sender.py:send_request():402] send_request: poll_exit
+2023-06-02 10:20:24,981 DEBUG   HandlerThread:40284 [handler.py:handle_request():144] handle_request: defer
+2023-06-02 10:20:24,981 INFO    HandlerThread:40284 [handler.py:handle_request_defer():170] handle defer: 10
+2023-06-02 10:20:24,985 DEBUG   SenderThread:40284 [sender.py:send_request():402] send_request: defer
+2023-06-02 10:20:24,985 INFO    SenderThread:40284 [sender.py:send_request_defer():622] handle sender defer: 10
+2023-06-02 10:20:24,990 INFO    SenderThread:40284 [file_pusher.py:finish():167] shutting down file pusher
+2023-06-02 10:20:25,240 INFO    wandb-upload_2:40284 [upload_job.py:push():137] Uploaded file /home/broug/Desktop/mlops-notebooks/wandb/run-20230602_102006-hyk6d2nt/files/conda-environment.yaml
+2023-06-02 10:20:25,267 INFO    wandb-upload_0:40284 [upload_job.py:push():137] Uploaded file /home/broug/Desktop/mlops-notebooks/wandb/run-20230602_102006-hyk6d2nt/files/output.log
+2023-06-02 10:20:25,279 INFO    wandb-upload_1:40284 [upload_job.py:push():137] Uploaded file /home/broug/Desktop/mlops-notebooks/wandb/run-20230602_102006-hyk6d2nt/files/wandb-summary.json
+2023-06-02 10:20:25,306 INFO    wandb-upload_4:40284 [upload_job.py:push():137] Uploaded file /home/broug/Desktop/mlops-notebooks/wandb/run-20230602_102006-hyk6d2nt/files/config.yaml
+2023-06-02 10:20:25,313 INFO    wandb-upload_3:40284 [upload_job.py:push():137] Uploaded file /home/broug/Desktop/mlops-notebooks/wandb/run-20230602_102006-hyk6d2nt/files/requirements.txt
+2023-06-02 10:20:25,514 INFO    Thread-11 (_thread_body):40284 [sender.py:transition_state():626] send defer: 11
+2023-06-02 10:20:25,514 DEBUG   HandlerThread:40284 [handler.py:handle_request():144] handle_request: defer
+2023-06-02 10:20:25,515 INFO    HandlerThread:40284 [handler.py:handle_request_defer():170] handle defer: 11
+2023-06-02 10:20:25,515 DEBUG   SenderThread:40284 [sender.py:send_request():402] send_request: defer
+2023-06-02 10:20:25,515 INFO    SenderThread:40284 [sender.py:send_request_defer():622] handle sender defer: 11
+2023-06-02 10:20:25,515 INFO    SenderThread:40284 [file_pusher.py:join():172] waiting for file pusher
+2023-06-02 10:20:25,515 INFO    SenderThread:40284 [sender.py:transition_state():626] send defer: 12
+2023-06-02 10:20:25,515 DEBUG   HandlerThread:40284 [handler.py:handle_request():144] handle_request: defer
+2023-06-02 10:20:25,515 INFO    HandlerThread:40284 [handler.py:handle_request_defer():170] handle defer: 12
+2023-06-02 10:20:25,516 DEBUG   SenderThread:40284 [sender.py:send_request():402] send_request: defer
+2023-06-02 10:20:25,516 INFO    SenderThread:40284 [sender.py:send_request_defer():622] handle sender defer: 12
+2023-06-02 10:20:25,610 INFO    SenderThread:40284 [sender.py:transition_state():626] send defer: 13
+2023-06-02 10:20:25,610 DEBUG   HandlerThread:40284 [handler.py:handle_request():144] handle_request: defer
+2023-06-02 10:20:25,610 INFO    HandlerThread:40284 [handler.py:handle_request_defer():170] handle defer: 13
+2023-06-02 10:20:25,610 DEBUG   SenderThread:40284 [sender.py:send_request():402] send_request: defer
+2023-06-02 10:20:25,611 INFO    SenderThread:40284 [sender.py:send_request_defer():622] handle sender defer: 13
+2023-06-02 10:20:25,611 INFO    SenderThread:40284 [sender.py:transition_state():626] send defer: 14
+2023-06-02 10:20:25,611 DEBUG   HandlerThread:40284 [handler.py:handle_request():144] handle_request: defer
+2023-06-02 10:20:25,611 INFO    HandlerThread:40284 [handler.py:handle_request_defer():170] handle defer: 14
+2023-06-02 10:20:25,611 DEBUG   SenderThread:40284 [sender.py:send():375] send: final
+2023-06-02 10:20:25,611 DEBUG   SenderThread:40284 [sender.py:send():375] send: footer
+2023-06-02 10:20:25,611 DEBUG   SenderThread:40284 [sender.py:send_request():402] send_request: defer
+2023-06-02 10:20:25,611 INFO    SenderThread:40284 [sender.py:send_request_defer():622] handle sender defer: 14
+2023-06-02 10:20:25,612 DEBUG   HandlerThread:40284 [handler.py:handle_request():144] handle_request: poll_exit
+2023-06-02 10:20:25,613 DEBUG   SenderThread:40284 [sender.py:send_request():402] send_request: poll_exit
+2023-06-02 10:20:25,613 DEBUG   HandlerThread:40284 [handler.py:handle_request():144] handle_request: server_info
+2023-06-02 10:20:25,614 DEBUG   HandlerThread:40284 [handler.py:handle_request():144] handle_request: get_summary
+2023-06-02 10:20:25,614 DEBUG   HandlerThread:40284 [handler.py:handle_request():144] handle_request: sampled_history
+2023-06-02 10:20:25,614 DEBUG   SenderThread:40284 [sender.py:send_request():402] send_request: server_info
+2023-06-02 10:20:25,664 INFO    MainThread:40284 [wandb_run.py:_footer_history_summary_info():3469] rendering history
+2023-06-02 10:20:25,664 INFO    MainThread:40284 [wandb_run.py:_footer_history_summary_info():3501] rendering summary
+2023-06-02 10:20:25,665 INFO    MainThread:40284 [wandb_run.py:_footer_sync_info():3428] logging synced files
+2023-06-02 10:20:25,666 DEBUG   HandlerThread:40284 [handler.py:handle_request():144] handle_request: shutdown
+2023-06-02 10:20:25,666 INFO    HandlerThread:40284 [handler.py:finish():842] shutting down handler
+2023-06-02 10:20:26,614 INFO    WriterThread:40284 [datastore.py:close():298] close: /home/broug/Desktop/mlops-notebooks/wandb/run-20230602_102006-hyk6d2nt/run-hyk6d2nt.wandb
+2023-06-02 10:20:26,664 INFO    SenderThread:40284 [sender.py:finish():1550] shutting down sender
+2023-06-02 10:20:26,664 INFO    SenderThread:40284 [file_pusher.py:finish():167] shutting down file pusher
+2023-06-02 10:20:26,664 INFO    SenderThread:40284 [file_pusher.py:join():172] waiting for file pusher

@@ -1,0 +1,84 @@
+{
+    "os": "Linux-5.19.0-1024-gcp-x86_64-with-glibc2.35",
+    "python": "3.11.3",
+    "heartbeatAt": "2023-06-02T10:27:59.565145",
+    "startedAt": "2023-06-02T10:27:59.198129",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--wandb_project",
+        "mlops_zoom_02",
+        "--wandb_entity",
+        "g-broughton",
+        "--data_artifact",
+        "g-broughton/mlops_zoom_02/NYC-Taxi:v0"
+    ],
+    "state": "running",
+    "program": "/home/broug/Desktop/mlops-notebooks/02-src/sweep.py",
+    "codePath": "02-src/sweep.py",
+    "git": {
+        "remote": "https://github.com/Graham-Broughton/mlops-notebooks.git",
+        "commit": "c618a669d0c50459b1968d98b05176a3e72a0f17"
+    },
+    "email": "broughton.graham@gmail.com",
+    "root": "/home/broug/Desktop/mlops-notebooks",
+    "host": "instance-5",
+    "username": "broug",
+    "executable": "/home/broug/mambaforge/envs/kaggle/bin/python",
+    "cpu_count": 4,
+    "cpu_count_logical": 8,
+    "cpu_freq": {
+        "current": 2199.998,
+        "min": 0.0,
+        "max": 0.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2199.998,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2199.998,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2199.998,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2199.998,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2199.998,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2199.998,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2199.998,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2199.998,
+            "min": 0.0,
+            "max": 0.0
+        }
+    ],
+    "disk": {
+        "total": 48.27519989013672,
+        "used": 14.952278137207031
+    },
+    "memory": {
+        "total": 31.34848403930664
+    }
+}
