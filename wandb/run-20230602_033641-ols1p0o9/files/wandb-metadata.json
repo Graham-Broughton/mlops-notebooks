@@ -1,0 +1,76 @@
+{
+    "os": "Linux-5.19.0-1022-gcp-x86_64-with-glibc2.35",
+    "python": "3.11.3",
+    "heartbeatAt": "2023-06-02T03:36:42.213458",
+    "startedAt": "2023-06-02T03:36:41.530429",
+    "docker": null,
+    "cuda": null,
+    "args": null,
+    "state": "running",
+    "program": "<python with no main file>",
+    "git": {
+        "remote": "https://github.com/Graham-Broughton/mlops-notebooks.git",
+        "commit": "2a6db80e2f01689358d8b3c5ec188789ea028532"
+    },
+    "email": "broughton.graham@gmail.com",
+    "root": "/home/broug/Desktop/mlops-notebooks",
+    "host": "instance-5",
+    "username": "broug",
+    "executable": "/home/broug/mambaforge/envs/kaggle/bin/python",
+    "cpu_count": 4,
+    "cpu_count_logical": 8,
+    "cpu_freq": {
+        "current": 2199.998,
+        "min": 0.0,
+        "max": 0.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2199.998,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2199.998,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2199.998,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2199.998,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2199.998,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2199.998,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2199.998,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2199.998,
+            "min": 0.0,
+            "max": 0.0
+        }
+    ],
+    "disk": {
+        "total": 48.27519989013672,
+        "used": 15.288684844970703
+    },
+    "memory": {
+        "total": 31.348495483398438
+    }
+}
